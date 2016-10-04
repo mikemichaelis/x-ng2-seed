@@ -1,0 +1,24 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    // When enabled, will trim trailing whitespace when you save a file.
+	"files.trimTrailingWhitespace": true,
+
+    // Force use of project TypeScript version
+    "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+        "when": "$(basename).ts"
+        },
+        "**/*.map": {
+        "when": "$(basename).map"
+        },
+        "**/*.css": {
+        "when": "$(basename).sass"
+        }
+    }
+}

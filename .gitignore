@@ -33,7 +33,7 @@ typings
 
 #IDE configuration files
 .idea
-.vscode
+//.vscode
 *.iml
 
 /tools/**/*.js
