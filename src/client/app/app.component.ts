@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { Config } from './shared/index';
+
+import { Auth0 }              from './shared/auth/auth0.service';
+import { OAuth }              from './shared/auth/oauth.service';
+import { WindowService }      from './shared/auth/window.service';
+//import { OAuthService } from 'angular2-oauth2/oauth-service';
+
 import './operators';
 
 /**
@@ -8,6 +14,7 @@ import './operators';
  */
 @Component({
   moduleId: module.id,
+  providers: [ Auth0, OAuth, WindowService ],
   selector: 'sd-app',
   templateUrl: 'app.component.html',
 })

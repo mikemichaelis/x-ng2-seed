@@ -1,7 +1,11 @@
 <div class="container">
   <div class="jumbotron">
-    <h1> Bootstrap Jumbotron </h1>
-    </div>
+    <h1>x-ng2-seed</h1>
+  </div>
+  <div>
+    <h4 *ngIf="oauth.authenticated()">You are logged in</h4>
+    <h4 *ngIf="!oauth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+  <div>
 
   <form (submit)="addName()">
     <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">

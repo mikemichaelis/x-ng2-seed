@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NameListService } from '../shared/index';
+import { Auth0 }              from '../shared/auth/auth0.service';
+import { OAuth }              from '../shared/auth/oauth.service';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -7,6 +9,7 @@ import { NameListService } from '../shared/index';
 @Component({
   moduleId: module.id,
   selector: 'sd-home',
+  // providers: [ Auth ],
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
 })
@@ -23,7 +26,7 @@ export class HomeComponent implements OnInit {
    *
    * @param {NameListService} nameListService - The injected NameListService.
    */
-  constructor(public nameListService: NameListService) {}
+  constructor(private auth0: Auth0, private oauth: OAuth, public nameListService: NameListService) {}
 
   /**
    * Get the names OnInit

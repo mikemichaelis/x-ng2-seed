@@ -1,4 +1,27 @@
-<nav>
-  <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">HOME</a>
-  <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">ABOUT</a>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">X Ng2 Seed</a>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+        </li>
+        <li>
+          <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">ABOUT</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button class="btn btn-primary btn-margin" (click)="login()" *ngIf="!oauth.authenticated()" >Log In</button>
+        </li>
+        <li>
+          <button class="btn btn-primary btn-margin" (click)="logout()" *ngIf="oauth.authenticated()">Log Out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

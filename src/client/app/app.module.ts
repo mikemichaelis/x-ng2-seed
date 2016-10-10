@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
+import { AUTH_PROVIDERS }      from 'angular2-jwt';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AboutModule } from './about/about.module';
@@ -18,7 +19,8 @@ import { SharedModule } from './shared/shared.module';
   providers: [{
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'
-  }],
+  },
+  AUTH_PROVIDERS],
   bootstrap: [AppComponent]
 
 })

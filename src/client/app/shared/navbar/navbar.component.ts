@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Auth0 }      from '../auth/auth0.service';
+import { OAuth }      from '../auth/oauth.service';
+
+//import { OAuthService } from 'angular2-oauth2/oauth-service';
+
 
 /**
  * This class represents the navigation bar component.
@@ -10,4 +15,16 @@ import { Component } from '@angular/core';
   styleUrls: ['navbar.component.css'],
 })
 
-export class NavbarComponent {}
+export class NavbarComponent {
+
+  constructor(private auth0: Auth0, private oauth: OAuth ) {
+  }
+
+  public login(): void {
+    this.oauth.login();
+  }
+
+  public logout(): void {
+    this.oauth.logout();
+  }
+}
