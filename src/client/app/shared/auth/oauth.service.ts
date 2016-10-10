@@ -28,7 +28,7 @@ export class OAuth {
     private subscription: any;
 
     constructor(private windows: WindowService, private http: Http) {
-        http.get("oauth.json")
+        http.get("/app/shared/auth/oauth.json")
             .map(res => res.json())
             .subscribe((config: any) => {
                 this.oAuthCallbackUrl = config.callbackUrl;
@@ -48,7 +48,7 @@ export class OAuth {
 
     public login() {
         let loopCount = this.loopCount;
-        this.windowHandle = this.windows.createWindow(this.oAuthTokenUrl, "OAuth2 Login", 500, 650);
+        this.windowHandle = this.windows.createWindow(this.oAuthTokenUrl, "OAuth2 Login", 500, 850);
 
         this.intervalId = setInterval(() => {
             if (loopCount-- < 0) {

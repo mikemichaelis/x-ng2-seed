@@ -22,9 +22,16 @@ export class NavbarComponent {
 
   public login(): void {
     this.oauth.login();
+    // this.auth0.login();
   }
 
   public logout(): void {
     this.oauth.logout();
+    // this.auth0.logout();
+  }
+
+  public authenticated(): boolean {
+    return this.oauth.authenticated();
+    //return this.auth0.authenticated();
   }
 }
