@@ -143,6 +143,7 @@
     "angular2-jwt": "^0.1.23",
     "auth0-lock": "^10.4.0",
     "bootstrap": "^3.3.7",
+    "buffer": "^5.0.0",
     "core-js": "^2.4.0",
     "crypto": "0.0.3",
     "es-module-loader": "^1.0.0",
@@ -151,6 +152,8 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.38",
+    "x-common-lib": "^0.0.8",
+    "x-oauth-lib": "0.0.8",
     "zone.js": "0.6.23"
   }
 }

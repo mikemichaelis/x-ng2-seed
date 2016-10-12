@@ -3,8 +3,8 @@
     <h1>x-ng2-seed</h1>
   </div>
   <div>
-    <h4 *ngIf="oauth.authenticated()">You are logged in</h4>
-    <h4 *ngIf="!oauth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+    <h4 *ngIf="authService.authenticated()">You are logged in</h4>
+    <h4 *ngIf="!authService.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
   <div>
 
   <form (submit)="addName()">

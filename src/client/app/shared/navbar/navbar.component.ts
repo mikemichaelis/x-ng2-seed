@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import { Auth0 }      from '../auth/auth0.service';
-import { OAuth }      from '../auth/oauth.service';
+import { Component, Inject, OpaqueToken } from '@angular/core';
 
-//import { OAuthService } from 'angular2-oauth2/oauth-service';
-
+import { IAuthService } from 'x-common-lib';
+import { AUTH_TOKEN } from '../../app.module';
 
 /**
  * This class represents the navigation bar component.
@@ -17,21 +15,22 @@ import { OAuth }      from '../auth/oauth.service';
 
 export class NavbarComponent {
 
-  constructor(private auth0: Auth0, private oauth: OAuth ) {
+  constructor(@Inject(AUTH_TOKEN) private authService: IAuthService ) {
+
   }
 
   public login(): void {
-    this.oauth.login();
+    this.authService.login();
     // this.auth0.login();
   }
 
   public logout(): void {
-    this.oauth.logout();
+    this.authService.logout();
     // this.auth0.logout();
   }
 
   public authenticated(): boolean {
-    return this.oauth.authenticated();
+    return this.authService.authenticated();
     //return this.auth0.authenticated();
   }
 }
