@@ -19,6 +19,8 @@ import { SharedModule } from './shared/shared.module';
 import { WindowService }        from 'x-common-lib';
 import { OAuthService, OAUTHSERVICE_CONFIG_TOKEN } from 'x-oauth-lib';
 
+import * as _ from 'lodash';
+
 @NgModule({
   imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), AboutModule, HomeModule, Ng2BootstrapModule, SharedModule.forRoot()],
   declarations: [AppComponent],
