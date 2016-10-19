@@ -1,5 +1,5 @@
 import './operators';
-import { Component, OpaqueToken, OnInit } from '@angular/core';
+import { Component, OpaqueToken, OnInit, ViewContainerRef } from '@angular/core';
 import { Config } from './shared/index';
 
 
@@ -17,7 +17,13 @@ import { Config } from './shared/index';
 })
 
 export class AppComponent implements OnInit {
-  constructor() {
+
+  // taken from http://valor-software.com/ng2-bootstrap/#/modals\
+  // however the below private variable is redundant since the constructor parameter auto creates the same private variable
+  private viewContainerRef: ViewContainerRef;
+
+  constructor(viewContainerRef: ViewContainerRef) {
+    this.viewContainerRef = viewContainerRef;
     console.log('Environment config', Config);
   }
 

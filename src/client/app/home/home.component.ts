@@ -16,6 +16,9 @@ import { AUTH_TOKEN } from '../app.module';
 
 export class HomeComponent implements OnInit {
 
+  public rate: number;
+  public max: 5;
+
   public title: string = 'Popover title';
   public message: string = 'Popover description';
   public confirmClicked: boolean = false;
@@ -62,5 +65,4 @@ export class HomeComponent implements OnInit {
     this.newName = '';
     return false;
   }
-
 }
