@@ -25,8 +25,6 @@ export class ProjectConfig extends SeedConfig {
       // { src: 'ng2-bootstrap/bundles/ng2-bootstrap', inject: 'lib' },
       { src: 'bootstrap/dist/css/bootstrap.css', inject: true },
       { src: 'font-awesome/css/font-awesome.min.css', inject: true },
-
-
     ];
 
     // Add `local` third-party libraries to be injected/bundled.

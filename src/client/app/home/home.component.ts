@@ -16,6 +16,12 @@ import { AUTH_TOKEN } from '../app.module';
 
 export class HomeComponent implements OnInit {
 
+  public title: string = 'Popover title';
+  public message: string = 'Popover description';
+  public confirmClicked: boolean = false;
+  public cancelClicked: boolean = false;
+  public isOpen: boolean = false;
+
   newName: string = '';
   errorMessage: string;
   names: any[] = [];

@@ -5,10 +5,16 @@ import { HomeComponent } from './home.component';
 import { NameListService } from '../shared/name-list/index';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
+// angular2-bootstrap-confirm imports
+import {ConfirmModule} from 'angular2-bootstrap-confirm';
+import {ConfirmOptions, Position} from 'angular2-bootstrap-confirm';
+import {PositionService as Positioning} from 'ng2-bootstrap/components/position';
+
 @NgModule({
-  imports: [CommonModule, SharedModule],
-  declarations: [HomeComponent],
-  exports: [HomeComponent],
-  providers: [NameListService, AUTH_PROVIDERS]
+  imports: [ CommonModule, SharedModule, ConfirmModule ],
+  declarations: [ HomeComponent ],
+  exports: [ HomeComponent ],
+  providers: [NameListService, AUTH_PROVIDERS, ConfirmOptions,
+      { provide: Position, useClass: Positioning } ]
 })
 export class HomeModule { }

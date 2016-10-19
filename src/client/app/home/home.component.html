@@ -1,12 +1,13 @@
-<div class="container">
+<div class="container-fluid">
   <div class="jumbotron">
     <h1>x-ng2-seed</h1>
   </div>
   <div>
     <h4 *ngIf="authService.authenticated()">You are logged in</h4>
     <h4 *ngIf="!authService.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
-  <div>
+  </div>
 
+  <div>
   <form (submit)="addName()">
     <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">
     <button type="submit">Add</button>
@@ -15,4 +16,21 @@
   <ul>
     <li *ngFor="let name of names">{{name}}</li>
   </ul>
+  </div>
+
+<div>
+  <h4>Confirm Button</h4>
+  <button
+      class="btn btn-default"
+      mwlConfirm
+      [title]="title"
+      [message]="message"
+      placement="right"
+      (confirm)="confirmClicked = true"
+      (cancel)="cancelClicked = true"
+      [(isOpen)]="isOpen">
+      Click me!
+    </button>
+  </div>
 </div>
+
